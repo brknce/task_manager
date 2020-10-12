@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { TouchableOpacity, View, Text, TextInput } from "react-native";
 import DateTimePickerModal from "react-native-modal-datetime-picker";
 
-const Example = () => {
+const Date = () => {
 
     const [date, setDate] = useState("");
 
@@ -17,7 +17,7 @@ const Example = () => {
     };
 
     const handleConfirm = (date) => {
-        let dateString = date.getDate() + "/" + (date.getMonth() + 1) + "/" + date.getFullYear();
+        let dateString = date.getDate() + " - " + (date.getMonth() + 1) + " - " + date.getFullYear();
         setDate(dateString);
         hideDatePicker();
     };
@@ -27,8 +27,7 @@ const Example = () => {
 
             <TouchableOpacity onPress={showDatePicker}>
                 <View>
-                    <Text style={{ color: "gray" }}>End Date</Text>
-                    <TextInput pointerEvents = "none" style={{ borderBottomWidth: 2, borderBottomColor: "#D3D3D3", height: 30 }}>{date}</TextInput>
+                    <TextInput pointerEvents = "none" style={{ borderBottomWidth: 1, borderBottomColor: "gray", height: 30, fontSize : 16, fontWeight : "500" }}>{date}</TextInput>
                 </View>
             </TouchableOpacity>
 
@@ -43,4 +42,4 @@ const Example = () => {
     );
 };
 
-export default Example;
+export default Date;
